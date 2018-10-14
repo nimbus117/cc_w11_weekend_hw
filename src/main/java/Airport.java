@@ -37,7 +37,9 @@ public class Airport {
    }
 
    public void addPassengerToFlight(Passenger passenger, Flight flight) {
-       flight.addPassenger(passenger);
+       if (flight.getPlane() == null || flight.getPassengerCount() < flight.getPlane().getType().getCapacity()) {
+           flight.addPassenger(passenger);
+       }
    }
 
    public HashMap getPassengersPerFlight() {

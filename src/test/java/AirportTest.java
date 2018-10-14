@@ -62,4 +62,18 @@ public class AirportTest {
       assertEquals(2, airport.getPassengersPerFlight().get(321));
       assertEquals(1, airport.getPassengersPerFlight().get(422));
    }
+
+   @Test
+   public void wontAddPassengerToFullFlight() {
+      Flight flight1 = airport.createFlight(321, CodeType.MCT);
+      airport.addPlaneToHanger(plane1);
+      airport.assignPlaneToFlight(plane1, flight1);
+      Passenger passenger1 = new Passenger("Bob");
+      Passenger passenger2 = new Passenger("Betty");
+      Passenger passenger3 = new Passenger("Frank");
+      airport.addPassengerToFlight(passenger1, flight1);
+      airport.addPassengerToFlight(passenger2, flight1);
+      airport.addPassengerToFlight(passenger3, flight1);
+      assertEquals(2, flight1.getPassengerCount());
+   }
 }
