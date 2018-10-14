@@ -1,6 +1,5 @@
-import com.sun.org.apache.bcel.internal.classfile.Code;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Airport {
     private ArrayList<Plane> hanger;
@@ -39,5 +38,13 @@ public class Airport {
 
    public void addPassengerToFlight(Passenger passenger, Flight flight) {
        flight.addPassenger(passenger);
+   }
+
+   public HashMap getPassengersPerFlight() {
+       HashMap<Integer, Integer> flightCount = new HashMap<>();
+       for (Flight flight : flights) {
+          flightCount.put(flight.getNumber(), flight.getPassengerCount());
+       }
+       return flightCount;
    }
 }
