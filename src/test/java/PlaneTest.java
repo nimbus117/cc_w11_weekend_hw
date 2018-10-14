@@ -6,6 +6,7 @@ import static junit.framework.TestCase.assertEquals;
 public class PlaneTest {
 
     private Plane plane;
+
     @Before
     public void before() {
         plane = new Plane(PlaneType.BOEING737, AirlineType.BA);
