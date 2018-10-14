@@ -12,7 +12,7 @@ public class FlightTest {
     @Before
     public void before() {
         plane = new Plane(PlaneType.BOEING737, AirlineType.BA);
-        flight = new Flight( 123, "Iceland");
+        flight = new Flight( 123, CodeType.JFK);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class FlightTest {
 
     @Test
     public void hasDestination() {
-        assertEquals("Iceland", flight.getDestination());
+        assertEquals(CodeType.JFK, flight.getDestination());
     }
 
     @Test

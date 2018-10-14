@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Flight {
     private Plane plane;
     private int number;
-    private String destination;
+    private CodeType destination;
     private ArrayList<Passenger> passengers;
 
-    public Flight(int number, String destination) {
+    public Flight(int number, CodeType destination) {
         this.number = number;
         this.destination = destination;
         this.passengers = new ArrayList<>();
@@ -24,7 +24,7 @@ public class Flight {
         this.plane = plane;
     }
 
-    public String getDestination() {
+    public CodeType getDestination() {
         return this.destination;
     }
 
